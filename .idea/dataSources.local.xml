@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="expenshare@localhost" uuid="6cd5ff14-13d0-4f9f-9a1d-3c117557c452">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+    </data-source>
+  </component>
+</project>

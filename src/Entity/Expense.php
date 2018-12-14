@@ -1,6 +1,6 @@
 <?php
 
-namespace ‘AppEntity’;
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -43,7 +43,7 @@ class Expense
     private $createdAt;
 
     /**
-     * @var \Category
+     * @var Category
      *
      * @ORM\ManyToOne(targetEntity="Category")
      * @ORM\JoinColumns({
@@ -53,7 +53,7 @@ class Expense
     private $category;
 
     /**
-     * @var \Person
+     * @var Person
      *
      * @ORM\ManyToOne(targetEntity="Person")
      * @ORM\JoinColumns({
@@ -61,6 +61,114 @@ class Expense
      * })
      */
     private $person;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     * @return Expense
+     */
+    public function setId(int $id): Expense
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     * @return Expense
+     */
+    public function setTitle(string $title): Expense
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAmount(): string
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @param string $amount
+     * @return Expense
+     */
+    public function setAmount(string $amount): Expense
+    {
+        $this->amount = $amount;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt(): \DateTime
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     * @return Expense
+     */
+    public function setCreatedAt(\DateTime $createdAt): Expense
+    {
+        $this->createdAt = $createdAt;
+        return $this;
+    }
+
+    /**
+     * @return Category
+     */
+    public function getCategory(): Category
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param Category $category
+     * @return Expense
+     */
+    public function setCategory(Category $category): Expense
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * @return Person
+     */
+    public function getPerson(): Person
+    {
+        return $this->person;
+    }
+
+    /**
+     * @param Person $person
+     * @return Expense
+     */
+    public function setPerson(Person $person): Expense
+    {
+        $this->person = $person;
+        return $this;
+    }
 
 
 }

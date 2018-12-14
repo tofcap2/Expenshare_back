@@ -1,6 +1,6 @@
 <?php
 
-namespace ‘AppEntity’;
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -41,6 +41,78 @@ class ShareGroup
      * @ORM\Column(name="closed", type="boolean", nullable=false)
      */
     private $closed = '0';
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     * @return ShareGroup
+     */
+    public function setId(int $id): ShareGroup
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug(): string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     * @return ShareGroup
+     */
+    public function setSlug(string $slug): ShareGroup
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt(): \DateTime
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     * @return ShareGroup
+     */
+    public function setCreatedAt(\DateTime $createdAt): ShareGroup
+    {
+        $this->createdAt = $createdAt;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isClosed(): bool
+    {
+        return $this->closed;
+    }
+
+    /**
+     * @param bool $closed
+     * @return ShareGroup
+     */
+    public function setClosed(bool $closed): ShareGroup
+    {
+        $this->closed = $closed;
+        return $this;
+    }
 
 
 }

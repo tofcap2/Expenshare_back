@@ -1,6 +1,6 @@
 <?php
 
-namespace ‘AppEntity’;
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -36,7 +36,7 @@ class Debt
     private $paid = '0';
 
     /**
-     * @var \Person
+     * @var Person
      *
      * @ORM\ManyToOne(targetEntity="Person")
      * @ORM\JoinColumns({
@@ -46,7 +46,7 @@ class Debt
     private $from;
 
     /**
-     * @var \Person
+     * @var Person
      *
      * @ORM\ManyToOne(targetEntity="Person")
      * @ORM\JoinColumns({
@@ -54,6 +54,96 @@ class Debt
      * })
      */
     private $to;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     * @return Debt
+     */
+    public function setId(int $id): Debt
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAmount(): string
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @param string $amount
+     * @return Debt
+     */
+    public function setAmount(string $amount): Debt
+    {
+        $this->amount = $amount;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPaid(): bool
+    {
+        return $this->paid;
+    }
+
+    /**
+     * @param bool $paid
+     * @return Debt
+     */
+    public function setPaid(bool $paid): Debt
+    {
+        $this->paid = $paid;
+        return $this;
+    }
+
+    /**
+     * @return Person
+     */
+    public function getFrom(): Person
+    {
+        return $this->from;
+    }
+
+    /**
+     * @param Person $from
+     * @return Debt
+     */
+    public function setFrom(Person $from): Debt
+    {
+        $this->from = $from;
+        return $this;
+    }
+
+    /**
+     * @return Person
+     */
+    public function getTo(): Person
+    {
+        return $this->to;
+    }
+
+    /**
+     * @param Person $to
+     * @return Debt
+     */
+    public function setTo(Person $to): Debt
+    {
+        $this->to = $to;
+        return $this;
+    }
 
 
 }
