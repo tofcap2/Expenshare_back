@@ -20,7 +20,7 @@ class DebtController extends BaseController
     public function index(Request $request): Response
     {
         $debt = $this->getDoctrine()->getRepository(Debt::class)
-            ->createQueryBuilder('c')
+            ->createQueryBuilder('d')
             ->getQuery()
             ->getArrayResult();
 

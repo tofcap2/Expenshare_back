@@ -21,7 +21,7 @@ class ShareGroupController extends BaseController
     public function index(Request $request): Response
     {
         $sharegroup = $this->getDoctrine()->getRepository(ShareGroup::class)
-            ->createQueryBuilder('c')
+            ->createQueryBuilder('s')
             ->getQuery()
             ->getArrayResult();
 

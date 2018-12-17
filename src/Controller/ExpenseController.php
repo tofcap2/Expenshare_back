@@ -19,10 +19,9 @@ class ExpenseController extends BaseController
      */
     public function index(Request $request): Response
     {
-        $expense = $this->getDoctrine()->getRepository(Expense::class)
-            ->createQueryBuilder('c')
-            ->getQuery()
-            ->getArrayResult();
+        $expense = $this->getDoctrine()
+            ->getRepository(Expense::class)
+            ->findAll();
 
         if ($request->isXmlHttpRequest()){
             return $this->json($expense);

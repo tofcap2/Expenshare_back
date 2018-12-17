@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class CategoryController
  * @package App\Controller
+ * @Route("/category")
  */
 class CategoryController extends BaseController
 {
