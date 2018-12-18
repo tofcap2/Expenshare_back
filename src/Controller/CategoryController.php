@@ -7,7 +7,6 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -18,17 +17,32 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryController extends BaseController
 {
     /**
-     * @Route("/", name="category", methods="GET")
+     * @Route("/{id}", name="category_get", methods="GET")
      */
-    public function index(Request $request): Response
+    public function index(Category $category)
     {
-        $category = $this->getDoctrine()->getRepository(Category::class)
-            ->createQueryBuilder('c')
-            ->getQuery()
-            ->getArrayResult();
+        return $this->json($this->serialize($category));
+    }
 
-        if ($request->isXmlHttpRequest()){
-            return $this->json($category);
-        }
+    /**
+     * @Route("/", name="category_new", methods="POST")
+     */
+    public function new(Request $request)
+    {
+        $data = $request->getContent();
+
+        $jsonData = json_decode($data, true);
+
+        $em = $this->getDoctrine()->getManager();
+
+        $category = new Category();
+        $category->setId($jsonData["id"]);
+        $category->setCreatedAt(new \DateTime());
+        $category->setClosed(false);
+
+        $em->persist($category);
+        $em->flush();
+
+        return $this->json($this->serialize($category));
     }
 }

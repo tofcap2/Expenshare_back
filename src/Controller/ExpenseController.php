@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Expense;
 
@@ -15,16 +14,32 @@ use App\Entity\Expense;
 class ExpenseController extends BaseController
 {
     /**
-     * @Route("/", name="expense", methods="GET")
+     * @Route("/{id}", name="expense_get", methods="GET")
      */
-    public function index(Request $request): Response
+    public function index(Expense $expense)
     {
-        $expense = $this->getDoctrine()
-            ->getRepository(Expense::class)
-            ->findAll();
+        return $this->json($this->serialize($expense));
+    }
 
-        if ($request->isXmlHttpRequest()){
-            return $this->json($expense);
-        }
+    /**
+     * @Route("/", name="expense_new", methods="POST")
+     */
+    public function new(Request $request)
+    {
+        $data = $request->getContent();
+
+        $jsonData = json_decode($data, true);
+
+        $em = $this->getDoctrine()->getManager();
+
+        $expense = new Expense();
+        $expense->setId($jsonData["id"]);
+        $expense->setCreatedAt(new \DateTime());
+        $expense->setClosed(false);
+
+        $em->persist($expense);
+        $em->flush();
+
+        return $this->json($this->serialize($expense));
     }
 }
