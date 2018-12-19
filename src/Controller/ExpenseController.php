@@ -1,11 +1,11 @@
 <?php
-
 namespace App\Controller;
-
+use App\Entity\Category;
+use App\Entity\Person;
+use App\Entity\ShareGroup;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Expense;
-
 /**
  * Class ExpenseController
  * @package App\Controller
@@ -14,12 +14,23 @@ use App\Entity\Expense;
 class ExpenseController extends BaseController
 {
     /**
-     * @Route("/{id}", name="expense_get", methods="GET")
+     * @Route("/group/{slug}", name="expense", methods="GET")
      */
-    public function index(Expense $expense)
+    public function index(ShareGroup $shareGroup)
     {
-        return $this->json($this->serialize($expense));
+        $expense = $this->getDoctrine()->getRepository(Expense::class)
+            ->createQueryBuilder('e')
+            ->select('e', 'p', 'c')
+            ->leftJoin('e.person', 'p')
+            ->leftJoin('e.category', 'c')
+            ->where('p.shareGroup = :group')
+            ->setParameter(':group', $shareGroup)
+            ->getQuery()
+            ->getArrayResult();
+
+        return $this->json($expense);
     }
+
 
     /**
      * @Route("/", name="expense_new", methods="POST")
@@ -32,14 +43,21 @@ class ExpenseController extends BaseController
 
         $em = $this->getDoctrine()->getManager();
 
+        $shareGroup = $em->getRepository(ShareGroup::class)->findOneBySlug($jsonData["slug"]);
+        $person = $em->getRepository(Person::class)->find($jsonData["id"]);
+        $category = $em->getRepository(Category::class)->find($jsonData["id"]);
+
         $expense = new Expense();
-        $expense->setId($jsonData["id"]);
-        $expense->setCreatedAt(new \DateTime());
-        $expense->setClosed(false);
+        $expense->setTitle($jsonData["title"]);
+        $expense->setAmount($jsonData["amount"]);
+        $expense->setCategory($category);
+        $expense->setPerson($person);
+
 
         $em->persist($expense);
         $em->flush();
 
         return $this->json($this->serialize($expense));
     }
+
 }

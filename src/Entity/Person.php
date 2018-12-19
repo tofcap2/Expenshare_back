@@ -51,7 +51,7 @@ class Person
      *
      * @ORM\ManyToOne(targetEntity="ShareGroup")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="share_group_id", referencedColumnName="id")
+     *  @ORM\JoinColumn(name="share_group_id", referencedColumnName="id")
      * })
      */
     private $shareGroup;

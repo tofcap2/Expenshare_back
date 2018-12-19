@@ -43,10 +43,12 @@ class PersonController extends BaseController
 
         $em = $this->getDoctrine()->getManager();
 
+        $shareGroup = $em->getRepository(ShareGroup::class)->findOneBySlug($jsonData["slug"]);
+
         $person = new Person();
-        $person->setId($jsonData["id"]);
-        $person->setCreatedAt(new \DateTime());
-        $person->setClosed(false);
+        $person->setFirstname($jsonData["firstname"]);
+        $person->setLastname($jsonData["lastname"]);
+        $person->setShareGroup($shareGroup);
 
         $em->persist($person);
         $em->flush();
