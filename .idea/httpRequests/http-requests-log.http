@@ -1,3 +1,39 @@
+DELETE http://localhost/dcdev/Expenshare/expenshare_back/public/person
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T025903.404.html
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T025845.404.html
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/person/2
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T025710.404.html
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T025649.404.html
+
+###
+
 GET http://localhost/dcdev/Expenshare/expenshare_back/public/expense/group/digital_campus
 Accept: */*
 Cache-Control: no-cache
@@ -409,42 +445,6 @@ Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
 <> 2018-12-17T031648.200.json
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/expense
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T031628.500.html
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/expense
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T031554.500.html
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/expense
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T031316.500.html
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/expense
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T031258.200.json
 
 ###
 

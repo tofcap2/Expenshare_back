@@ -4,7 +4,6 @@ use App\Entity\Category;
 use App\Entity\Person;
 use App\Entity\ShareGroup;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Expense;
 /**
@@ -66,4 +65,24 @@ class ExpenseController extends BaseController
 
         return $this->json($exp[0]);
     }
+
+    /**
+     * @Route("/", name="expense_delete", methods="DELETE")
+     */
+    public function delete(Request $request)
+    {
+        $data = $request->getContent();
+
+        $jsonData = json_decode($data, true);
+
+        $expense = $this->getDoctrine()->getRepository(Expense::class)->find($jsonData["expense"]);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($expense);
+        $em->flush();
+
+        return $this->json(["ok" => true]);
+    }
+
+
 }
