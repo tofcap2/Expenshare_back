@@ -4,6 +4,7 @@ use App\Entity\Category;
 use App\Entity\Person;
 use App\Entity\ShareGroup;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Expense;
 /**
@@ -31,7 +32,6 @@ class ExpenseController extends BaseController
         return $this->json($expense);
     }
 
-
     /**
      * @Route("/", name="expense_new", methods="POST")
      */
@@ -43,21 +43,27 @@ class ExpenseController extends BaseController
 
         $em = $this->getDoctrine()->getManager();
 
-        $shareGroup = $em->getRepository(ShareGroup::class)->findOneBySlug($jsonData["slug"]);
-        $person = $em->getRepository(Person::class)->find($jsonData["id"]);
-        $category = $em->getRepository(Category::class)->find($jsonData["id"]);
+        $category = $em->getRepository(Category::class)->find($jsonData["category"]);
+        $person = $em->getRepository(Person::class)->find($jsonData["person"]);
+
 
         $expense = new Expense();
         $expense->setTitle($jsonData["title"]);
         $expense->setAmount($jsonData["amount"]);
         $expense->setCategory($category);
+        $expense->setCreatedAt(new \DateTime());
         $expense->setPerson($person);
-
 
         $em->persist($expense);
         $em->flush();
 
-        return $this->json($this->serialize($expense));
-    }
+        $exp = $this->getDoctrine()->getRepository(Expense::class)
+            ->createQueryBuilder('e')
+            ->where('e.id = :id')
+            ->setParameter(':id', $expense->getId())
+            ->getQuery()
+            ->getArrayResult();
 
+        return $this->json($exp[0]);
+    }
 }

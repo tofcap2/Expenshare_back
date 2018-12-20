@@ -1,3 +1,102 @@
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/expense/group/digital_campus
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T111855.200.json
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/category
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T111839.200.json
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/category
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T111103.200.json
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/expense/group/digital_campus
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T105931.200.json
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/expense
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T105917.404.html
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/category
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T105754.200.json
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/category
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T101144.404.html
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/category
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T101054.404.html
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/category
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T100656.404.html
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/expense/group/digital_campus
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T095141.200.json
+
+###
+
+GET http://localhost/dcdev/Expenshare/expenshare_back/public/person/group/digital_campus
+Accept: */*
+Cache-Control: no-cache
+X-Requested-With: XMLHttpRequest
+
+<> 2018-12-20T095119.200.json
+
+###
+
 GET http://localhost/dcdev/Expenshare/expenshare_back/public/person/group/digital_campus
 Accept: */*
 Cache-Control: no-cache
@@ -346,105 +445,6 @@ Cache-Control: no-cache
 X-Requested-With: XMLHttpRequest
 
 <> 2018-12-17T031258.200.json
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/expense
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T031028.500.html
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T030010.500.html
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T025100.500.html
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T025000.500.html
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T024927.500.html
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T024748.500.html
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T012911.200.json
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-17T125826.200.json
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-14T033554.200.json
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/category
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-14T033418.500.html
-
-###
-
-GET http://localhost/dcdev/Expenshare/expenshare_back/public/person
-Accept: */*
-Cache-Control: no-cache
-X-Requested-With: XMLHttpRequest
-
-<> 2018-12-14T033234.500.html
 
 ###
 

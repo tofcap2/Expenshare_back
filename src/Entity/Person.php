@@ -135,7 +135,7 @@ class Person
     /**
      * @return Collection
      */
-    public function getExpenses(): Collection
+    public function getExpenses(): ?Collection
     {
         return $this->expenses;
     }
